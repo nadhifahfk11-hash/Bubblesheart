@@ -1,0 +1,16 @@
+body {background-color: aqua ;
+      border: 4px solid gray;
+      border-radius: 12px;
+     }
+
+h1 {text-align: center;
+    font-weight: bold;
+    color: red;
+   }
+
+ul {list-stule-type: none;
+   }
+
+Li {display: inline;
+    padding: 4px;
+   }
