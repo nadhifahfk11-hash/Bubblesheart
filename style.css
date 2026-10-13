@@ -1,18 +1,26 @@
-body {background-color: cream ;
-      border: 4px solid gray;
-      border-radius: 12px;
-     }
+ body {
+  background-color: cream; 
+  border: 4px solid gray;
+  border-radius: 12px;
+}
 
-h1 {text-align: center;
-    font-weight: bold;
-    color: red;
-   }
+h1 {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+}
 
-ul {list-stule-type: none;
-   }
+ul {
+  list-style-type: none;  
+  padding: 0;            
+  margin: 0;
+}
 
-Li {display: inline;
-    padding: 4px;
-   }
-img {width ; 100px
-    }
+li {
+  display: inline;
+  padding: 4px;
+}
+img {
+  width: 100px;   
+  height: auto;   
+}
