@@ -1,26 +1,24 @@
- body {
-  background-color: aqua; 
-  border: 4px solid brown;
+html {
+  background-color: lightblue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  background-color: white;
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 40px;
   border-radius: 12px;
+  box-shadow: 0 4px 20px grey;
 }
-
 h1 {
-  text-align: center;
-  font-weight: bold;
   color: blue;
+  text-align: center;
+  border-bottom: 2px solid lightgrey;
+  padding-bottom: 15px;
 }
-
-ul {
-  list-style-type: none;  
-  padding: 0;            
-  margin: 0;
-}
-
-li {
-  display: inline;
-  padding: 4px;
-}
-img {
-  width: 200px;   
-  height: auto;   
+p {
+  line-height: 1.8;
+  color: black;
+  text-align: justify;
+  font-size: 16px;
 }
