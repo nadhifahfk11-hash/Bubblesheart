@@ -29,5 +29,16 @@ img {
   display: block;
   margin: 0;
 }
+ul {
+  display: flex;           
+  list-style-type: none;   
+  padding: 0;              
+  margin: 10px 0;          
+  gap: 15px;               
+}
+
+li {
+  display: inline;
+}
 
  
