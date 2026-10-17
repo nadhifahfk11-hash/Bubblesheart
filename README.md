@@ -1,7 +1,7 @@
 # 🫧 BUBBLES HEART 💖
 > **Proyek Pengembangan Website - Kelompok 2 | Kelas X. D**
 
-![Bubbles Heart Banner](background.png)
+![Bubbles Heart Banner]Screenshot 2026-10-17 192519.png
 
 Selamat datang di repositori resmi **Bubbles Heart**, proyek kolaborasi website estetik bertema perpaduan warna biru ceria dan balon cinta merah muda manis yang dirancang oleh Kelompok 2 Kelas X. D.
 
