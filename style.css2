@@ -11,7 +11,7 @@
 /* 1. Pasang Gambar Background Utama */
 html,
 body {
-  background-image: url('URL_GAMBAR_ANDA_DISINI') !important; /* Ganti dengan link gambar Anda */
+  background-image: url('Screenshot 2026-10-17 174637.png') !important; /* Ganti dengan link gambar Anda */
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
