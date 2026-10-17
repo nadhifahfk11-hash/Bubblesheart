@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bubblesheart | Kelompok 2 - Kelas X. D</title>
+  <title>Bubbles Heart | Kelompok 2 - Kelas X. D</title>
   
   <!-- Google Fonts: Fredoka & Quicksand -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Montserrat:wght@700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -18,85 +18,198 @@
 </head>
 <body>
 
-  <!-- Judul Utama Halaman -->
-  <h1>Bubblesheart</h1>
-
-  <!-- Menu Navigasi Interaktif -->
-  <ul>
-    <li><a href="#beranda" class="active">beranda</a></li>
-    <li><a href="#desain">Desain</a></li>
-    <li><a href="#produk">produk</a></li>
-    <li><a href="#tim">Tim Kami</a></li>
-  </ul>
-
-  <!-- Logo Bubblesheart -->
-  <img src="335303323" alt="Logo Bubblesheart" id="logo-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/833/833472.png'">
-
-  <!-- Bagian Filosofi Logo -->
-  <h2>Filosofi Logo Bubblesheart</h2>
-  
-  <p>
-    Logo kami memiliki filosofi yaitu <strong>Logo Bubblesheart</strong> berbentuk hati dengan tampilan gelembung berwarna pastel yang berkilau. Bentuk hati melambangkan kebersamaan, kepedulian, dan rasa saling menghargai antaranggota kelompok. Gelembung menggambarkan lima anggota yang memiliki sifat, ide, dan kemampuan berbeda, tetapi tetap bisa bersatu dan bekerja sama. Warna pastel melambangkan kreativitas dan suasana kelompok yang positif, sedangkan kilauan pada logo menggambarkan kelebihan setiap anggota yang saling melengkapi. Secara keseluruhan, Bubblesheart melambangkan lima orang yang berbeda karakter, tetapi memiliki tujuan yang sama. Dengan kekompakan, rasa saling percaya, dan kerja sama, setiap anggota dapat saling mendukung untuk mencapai hasil yang lebih baik bersama-sama.
-  </p>
-
-  <!-- Bagian Tim Pengembang (Kelompok 2 - Kelas X. D) -->
-  <h2 id="tim">Susunan Tim Pengembang (Kelompok 2)</h2>
-  
-  <div class="team-grid">
-    <!-- 1. Aura Dwi Ramadhani -->
-    <div class="member-card">
-      <div style="font-size: 2.5rem; margin-bottom: 8px;">💻</div>
-      <span class="role-badge">Web Programmer</span>
-      <h3>Aura Dwi Ramadhani</h3>
-      <p style="font-size: 0.88rem; padding: 10px; margin: 0; background: transparent; border: none; box-shadow: none; text-align: center;">
-        Mengembangkan logika pemrograman, animasi interaktif, dan fungsi website.
-      </p>
-    </div>
-
-    <!-- 2. Nadhifah Faiha -->
-    <div class="member-card">
-      <div style="font-size: 2.5rem; margin-bottom: 8px;">🏛️</div>
-      <span class="role-badge" style="color: #be185d; background: #fdf2f8; border-color: #fbcfe8;">Web Architect</span>
-      <h3>Nadhifah Faiha</h3>
-      <p style="font-size: 0.88rem; padding: 10px; margin: 0; background: transparent; border: none; box-shadow: none; text-align: center;">
-        Merancang fondasi arsitektur website, alur sistem, dan integrasi modul.
-      </p>
-    </div>
-
-    <!-- 3. Farah Nabila -->
-    <div class="member-card">
-      <div style="font-size: 2.5rem; margin-bottom: 8px;">🚀</div>
-      <span class="role-badge" style="color: #15803d; background: #f0fdf4; border-color: #bbf7d0;">Web Developer</span>
-      <h3>Farah Nabila</h3>
-      <p style="font-size: 0.88rem; padding: 10px; margin: 0; background: transparent; border: none; box-shadow: none; text-align: center;">
-        Membangun komponen halaman web dan memastikan tampilan responsif.
-      </p>
-    </div>
-
-    <!-- 4. Kannisa Desfitra -->
-    <div class="member-card">
-      <div style="font-size: 2.5rem; margin-bottom: 8px;">🎨</div>
-      <span class="role-badge" style="color: #b45309; background: #fef3c7; border-color: #fde68a;">Web Designer</span>
-      <h3>Kannisa Desfitra</h3>
-      <p style="font-size: 0.88rem; padding: 10px; margin: 0; background: transparent; border: none; box-shadow: none; text-align: center;">
-        Merancang palet warna pastel, konsep Glassmorphism, dan tata letak UI/UX.
-      </p>
-    </div>
-
-    <!-- 5. Khalilla Andien -->
-    <div class="member-card">
-      <div style="font-size: 2.5rem; margin-bottom: 8px;">✨</div>
-      <span class="role-badge" style="color: #b45309; background: #fef3c7; border-color: #fde68a;">Web Designer</span>
-      <h3>Khalilla Andien</h3>
-      <p style="font-size: 0.88rem; padding: 10px; margin: 0; background: transparent; border: none; box-shadow: none; text-align: center;">
-        Menciptakan detail aset visual balon 3D, tipografi, dan ornamen estetik.
-      </p>
-    </div>
+  <!-- ==========================================
+       🌸 ORNAMEN KUPU-KUPU, AWAN & BINTANG (BUBBLES HEART)
+       ========================================== -->
+  <!-- Kupu-kupu Kiri -->
+  <div class="butterfly-decor butterfly-left">
+    <div class="wing wing-l"></div>
+    <div class="wing wing-r"></div>
   </div>
 
-  <p style="text-align: center; margin-top: 30px; font-weight: 600; color: #ff5288; border: none; background: transparent; box-shadow: none;">
-    🫧 Dibuat dengan 💖 oleh Kelompok 2 • Kelas X. D 🫧
-  </p>
+  <!-- Kupu-kupu Kanan -->
+  <div class="butterfly-decor butterfly-right">
+    <div class="wing wing-l"></div>
+    <div class="wing wing-r"></div>
+  </div>
 
+  <!-- Bintang-bintang Berkelap-Kelip -->
+  <div class="star-decor star-top-l1">✦</div>
+  <div class="star-decor star-top-l2">★</div>
+  <div class="star-decor star-top-l3">✦</div>
+  <div class="star-decor star-mid-r">★</div>
+
+  <!-- Awan Lucu Bawah -->
+  <div class="cloud-decor cloud-bottom"><i class="fa-solid fa-cloud"></i></div>
+
+  <div class="main-wrapper">
+
+    <!-- Top Bar: Search Bar di Pojok Kanan Atas (Persis Gambar) -->
+    <div class="top-nav-bar">
+      <div class="search-pill">
+        <input type="text" placeholder="Search..." disabled>
+        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         🌸 1. TOP HERO CARD (BUBBLES HEART PERSIS GAMBAR)
+         ========================================== -->
+    <div class="hero-top-card">
+      <!-- Logo Hati di Bagian Atas -->
+      <div class="hero-logo-box">
+        <img src="335303323" alt="Logo Bubblesheart" class="hero-logo-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/833/833472.png'">
+      </div>
+
+      <!-- Badge Kelompok 2 -->
+      <div class="kelompok-badge">KELOMPOK 2</div>
+
+      <!-- Judul Raksasa Balon 3D "BUBBLES HEART" (Persis Font Balon di Gambar) -->
+      <div class="title-wrap">
+        <h1 class="giant-bubble-title">
+          <span class="bubble-word">BUBBLES</span>
+          <span class="ribbon-icon">🎀</span>
+          <span class="bubble-word">HEART</span>
+        </h1>
+        <p class="hero-subtitle">KELOMPOK 2 | KELAS X. D</p>
+      </div>
+
+      <!-- Tombol Kapsul Bawah -->
+      <div class="hero-pill-btn">BUBBLES HEART</div>
+    </div>
+
+    <!-- ==========================================
+         🌸 2. PILL NAVBAR (MENU KAPSUL MELAYANG)
+         ========================================== -->
+    <nav class="pill-navbar">
+      <a href="#home" class="nav-pill active">Home</a>
+      <a href="#design" class="nav-pill">Design</a>
+      <a href="#products" class="nav-pill">Products</a>
+    </nav>
+
+    <!-- ==========================================
+         🌸 3. MIDDLE SECTION (ABOUT KELOMPOK - PARAGRAF - OUR MEMBER)
+         ========================================== -->
+    <div class="middle-section" id="design">
+      <!-- Sisi Kiri: ABOUT KELOMPOK -->
+      <div class="title-col left-col">
+        <div class="v-accent-bar"></div>
+        <h2 class="col-title">
+          ABOUT<br>
+          <span class="accent-text">KELOMPOK</span>
+        </h2>
+      </div>
+
+      <!-- Sisi Tengah: Teks Filosofi Logo & Makna -->
+      <div class="text-content-col">
+        <p>
+          Logo kami memiliki filosofi yaitu <strong>Logo Bubblesheart</strong> berbentuk hati dengan tampilan gelembung berwarna pastel yang berkilau. Bentuk hati melambangkan kebersamaan, kepedulian, dan rasa saling menghargai antaranggota kelompok.
+        </p>
+        <p>
+          Gelembung menggambarkan lima anggota yang memiliki sifat, ide, dan kemampuan berbeda, tetapi tetap bisa bersatu dan bekerja sama. Warna pastel melambangkan kreativitas dan suasana kelompok yang positif, sedangkan kilauan pada logo menggambarkan kelebihan setiap anggota yang saling melengkapi untuk mencapai hasil yang lebih baik bersama-sama.
+        </p>
+      </div>
+
+      <!-- Sisi Kanan: OUR MEMBER -->
+      <div class="title-col right-col">
+        <div class="v-accent-bar"></div>
+        <h2 class="col-title">
+          OUR<br>
+          <span class="accent-text">MEMBER</span>
+        </h2>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         🌸 4. OUR MEMBERS (5 LINGKARAN BERGELOMBANG PINK PASTEL)
+         ========================================== -->
+    <div class="members-grid-row" id="members">
+      
+      <!-- Member 1: Aura Dwi Ramadhani -->
+      <div class="member-col stagger-up">
+        <div class="circle-avatar-wrap">
+          <div class="circle-avatar">
+            <span class="avatar-icon">💻</span>
+            <div class="inner-horizon-line"></div>
+          </div>
+        </div>
+        <div class="member-info">
+          <span class="role-badge">~ Web Programmer ~</span>
+          <h3 class="member-name">Aura Dwi Ramadhani</h3>
+        </div>
+      </div>
+
+      <!-- Member 2: Nadhifah Faiha -->
+      <div class="member-col stagger-down">
+        <div class="circle-avatar-wrap">
+          <div class="circle-avatar">
+            <span class="avatar-icon">🏛️</span>
+            <div class="inner-horizon-line"></div>
+          </div>
+        </div>
+        <div class="member-info">
+          <span class="role-badge">~ Web Architect ~</span>
+          <h3 class="member-name">Nadhifah Faiha</h3>
+        </div>
+      </div>
+
+      <!-- Member 3: Farah Nabila -->
+      <div class="member-col stagger-up">
+        <div class="circle-avatar-wrap">
+          <div class="circle-avatar">
+            <span class="avatar-icon">🚀</span>
+            <div class="inner-horizon-line"></div>
+          </div>
+        </div>
+        <div class="member-info">
+          <span class="role-badge">~ Web Developer ~</span>
+          <h3 class="member-name">Farah Nabila</h3>
+        </div>
+      </div>
+
+      <!-- Member 4: Kannisa Desfitra -->
+      <div class="member-col stagger-down">
+        <div class="circle-avatar-wrap">
+          <div class="circle-avatar">
+            <span class="avatar-icon">🎨</span>
+            <div class="inner-horizon-line"></div>
+          </div>
+        </div>
+        <div class="member-info">
+          <span class="role-badge">~ Web Designer ~</span>
+          <h3 class="member-name">Kannisa Desfitra</h3>
+        </div>
+      </div>
+
+      <!-- Member 5: Khalilla Andien -->
+      <div class="member-col stagger-up">
+        <div class="circle-avatar-wrap">
+          <div class="circle-avatar">
+            <span class="avatar-icon">✨</span>
+            <div class="inner-horizon-line"></div>
+          </div>
+        </div>
+        <div class="member-info">
+          <span class="role-badge">~ Web Designer ~</span>
+          <h3 class="member-name">Khalilla Andien</h3>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==========================================
+         🌸 5. FOOTER
+         ========================================== -->
+    <footer class="clean-footer">
+      <p>© 2026 <strong>Bubbles Heart</strong> • Kelompok 2 | Kelas X. D</p>
+    </footer>
+
+  </div>
+
+  <!-- Lantai Pink Bawah (Persis Bagian Bawah Gambar Anda) -->
+  <div class="bottom-pink-floor"></div>
+
+  <!-- JavaScript Interaktif -->
+  <script src="script.js"></script>
 </body>
 </html>
