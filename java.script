@@ -1,38 +1,185 @@
-// Audio Effect State
-let soundEnabled = true;
-const audioBtn = document.getElementById('audioToggle');
+// --- DATABASE DATA ANGGOTA KELOMPOK ---
+const membersData = {
+    aura: {
+        name: "Aura Dwi",
+        role: "Web Developer",
+        img: "about me.jpeg",
+        desc: "Hai, semuanya! Aku seorang web developer. Tugasku adalah merancang, membangun, dan memelihara struktur serta performa sebuah website. Aku memastikan website dapat diakses dengan cepat, aman, dan berjalan tanpa kendala. Intinya, aku mengubah ide menjadi platform digital yang andal!"
+    },
+    nadhifah: {
+        name: "Nadhifah Faiha",
+        role: "App Programmer",
+        img: "Nadhifah.jpeg",
+        desc: "Hai, semuanya! Aku seorang app programmer. Tugasku adalah membuat aplikasi untuk HP dan komputer. Aku memastikan aplikasi berfungsi dengan baik dan mudah digunakan. Intinya, aku mengubah ide menjadi aplikasi yang bermanfaat!"
+    },
+    nabila: {
+        name: "Farah Nabila",
+        role: "Content Writer",
+        img: "Nabila .jpeg",
+        desc: "Hai, semuanya! Aku seorang content writer. Tugasku adalah membuat konten menarik, seperti artikel, tulisan blog, dan caption media sosial. Aku menggunakan kata-kata untuk menyampaikan ide dan menarik pembaca. Intinya, aku mengubah ide menjadi cerita yang menarik!"
+    },
+    kannisa: {
+        name: "Kannisa Desfitra",
+        role: "Graphic Designer",
+        img: "Kannisa .jpeg",
+        desc: "Hai, semuanya! Aku seorang graphic designer. Tugasku adalah membuat desain visual, seperti poster, logo, dan iklan. Aku memadukan warna, gambar, dan tulisan agar desain terlihat menarik. Intinya, aku mengubah ide menjadi karya visual yang kreatif!"
+    },
+    khalilla: {
+        name: "Khalilla Andien",
+        role: "Graphic Designer",
+        img: "Khalilla.jpeg",
+        desc: "Hai, semuanya! Aku seorang graphic designer. Tugasku adalah membuat desain visual, seperti poster, logo, dan iklan. Aku memadukan warna, gambar, dan tulisan agar desain terlihat menarik. Intinya, aku mengubah ide menjadi karya visual yang kreatif!"
+    }
+};
 
-if (audioBtn) {
-    audioBtn.addEventListener('click', () => {
-        soundEnabled = !soundEnabled;
-        audioBtn.innerHTML = soundEnabled ? '<i class="fas fa-volume-up"></i>' : '<i class="fas fa-volume-mute"></i>';
-        audioBtn.style.opacity = soundEnabled ? '1' : '0.6';
-    });
+// --- BUBBLESHEART AUDIO SYSTEM ---
+let soundEnabled = true;
+let isBgmPlaying = false;
+
+const audioBtn = document.getElementById('audioToggle');
+const AudioContext = window.AudioContext || window.webkitAudioContext;
+let audioCtx;
+
+function initAudioContext() {
+    if (!audioCtx) {
+        audioCtx = new AudioContext();
+    }
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+    }
+}
+
+function playButtonClickSound() {
+    if (!soundEnabled) return;
+    initAudioContext();
+
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.06);
+
+    gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.06);
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.06);
 }
 
 function playPopSound() {
     if (!soundEnabled) return;
-    try {
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    initAudioContext();
+
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(700, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(220, audioCtx.currentTime + 0.09);
+
+    gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.09);
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.09);
+}
+
+let bgmInterval;
+function startDreamyBgm() {
+    if (isBgmPlaying || !soundEnabled) return;
+    initAudioContext();
+    isBgmPlaying = true;
+
+    const notes = [523.25, 659.25, 783.99, 987.77, 880.00, 659.25];
+    let noteIndex = 0;
+
+    bgmInterval = setInterval(() => {
+        if (!soundEnabled || !isBgmPlaying) return;
+
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
 
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(650, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(220, audioCtx.currentTime + 0.08);
+        osc.type = 'triangle';
+        const freq = notes[noteIndex % notes.length];
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
 
-        gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.08);
+        gain.gain.setValueAtTime(0.03, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.4);
 
         osc.connect(gain);
         gain.connect(audioCtx.destination);
 
         osc.start();
-        osc.stop(audioCtx.currentTime + 0.08);
-    } catch (e) {}
+        osc.stop(audioCtx.currentTime + 0.4);
+
+        noteIndex++;
+    }, 450);
 }
 
-// Background Canvas Interactive Bubbles
+function stopDreamyBgm() {
+    isBgmPlaying = false;
+    if (bgmInterval) {
+        clearInterval(bgmInterval);
+    }
+}
+
+if (audioBtn) {
+    audioBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        soundEnabled = !soundEnabled;
+
+        if (soundEnabled) {
+            audioBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            audioBtn.style.opacity = '1';
+            startDreamyBgm();
+            playButtonClickSound();
+        } else {
+            audioBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            audioBtn.style.opacity = '0.6';
+            stopDreamyBgm();
+        }
+    });
+}
+
+window.addEventListener('click', () => {
+    initAudioContext();
+    if (soundEnabled && !isBgmPlaying) {
+        startDreamyBgm();
+    }
+}, { once: true });
+
+
+// --- MODAL POP-UP LOGIC ANGGOTA ---
+function openMemberModal(memberKey) {
+    playButtonClickSound();
+    const data = membersData[memberKey];
+    if (!data) return;
+
+    document.getElementById('modalImg').src = data.img;
+    document.getElementById('modalName').innerText = data.name;
+    document.getElementById('modalRole').innerHTML = `<i class="fas fa-user-tag"></i> ${data.role}`;
+    document.getElementById('modalDesc').innerText = data.desc;
+
+    const modal = document.getElementById('memberModal');
+    modal.classList.add('active');
+}
+
+function closeMemberModal(event) {
+    if (event) event.stopPropagation();
+    playButtonClickSound();
+    const modal = document.getElementById('memberModal');
+    modal.classList.remove('active');
+}
+
+
+// --- ANIMASI CANVAS GELEMBUNG ---
 const canvas = document.getElementById('bubbleCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -48,7 +195,7 @@ let mouse = { x: null, y: null };
 window.addEventListener('mousemove', (e) => {
     mouse.x = e.x;
     mouse.y = e.y;
-    if (Math.random() < 0.2) {
+    if (Math.random() < 0.18) {
         createParticle(e.x, e.y);
     }
 });
@@ -147,7 +294,7 @@ function createParticle(x, y) {
 }
 
 window.addEventListener('click', (e) => {
-    if (!e.target.closest('.navbar') && !e.target.closest('iframe')) {
+    if (!e.target.closest('.navbar') && !e.target.closest('iframe') && !e.target.closest('.modal-card')) {
         playPopSound();
         for (let i = 0; i < 6; i++) {
             createParticle(e.clientX, e.clientY);
