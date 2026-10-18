@@ -347,3 +347,87 @@ body {
 .text-box {
     flex: 1.8;
     min-width: 300px
+/* Styling Bagian Presentation Persis Seperti Contoh Gambar */
+.presentation-direct-section {
+    width: 100%;
+    max-width: 900px; /* Lebar presisi sesuai gambar referensi */
+    margin: 60px auto 40px;
+    padding: 0 10px;
+    background: transparent !important; /* Hapus latar belakang kartu */
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Header Title PRESENTATION */
+.presentation-header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding-left: 5px;
+}
+
+.presentation-header-title .title-bar {
+    width: 6px;
+    height: 36px;
+    background: #60a5fa;
+    border-radius: 4px;
+    box-shadow: 0 0 12px #60a5fa;
+}
+
+.presentation-header-title h2 {
+    font-family: 'Fredoka', cursive;
+    font-size: 2.3rem;
+    letter-spacing: 3px;
+    color: #b19ffb;
+    text-shadow: 0 0 15px rgba(177, 159, 251, 0.6);
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Bingkai Kotak Neon Biru Berada Langsung di Background Website */
+.presentation-box-glow {
+    width: 100%;
+    background: #090a16;
+    border-radius: 28px;
+    border: 3px solid #5294e2; /* Garis tepi biru terang */
+    box-shadow: 0 0 25px rgba(82, 148, 226, 0.6), inset 0 0 15px rgba(82, 148, 226, 0.3);
+    padding: 6px;
+    overflow: hidden;
+}
+
+.canva-aspect-ratio-hd {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* Rasio 16:9 proporsional */
+    border-radius: 22px;
+    overflow: hidden;
+    background: #000;
+}
+
+.canva-presentation-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Penyesuaian Responsif Layar Smartphone */
+@media (max-width: 768px) {
+    .presentation-direct-section {
+        margin: 40px auto 20px;
+    }
+    .presentation-header-title h2 {
+        font-size: 1.8rem;
+    }
+    .presentation-box-glow {
+        border-radius: 20px;
+        padding: 3px;
+    }
+    .canva-aspect-ratio-hd {
+        border-radius: 16px;
+    }
+}
