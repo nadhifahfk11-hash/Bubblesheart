@@ -155,7 +155,6 @@ window.addEventListener('click', () => {
     }
 }, { once: true });
 
-
 // --- MODAL POP-UP LOGIC ANGGOTA ---
 function openMemberModal(memberKey) {
     playButtonClickSound();
@@ -186,7 +185,6 @@ function closeMemberModal(event) {
         modal.classList.remove('active');
     }
 }
-
 
 // --- ANIMASI CANVAS GELEMBUNG ---
 const canvas = document.getElementById('bubbleCanvas');
