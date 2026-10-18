@@ -32,7 +32,7 @@ const membersData = {
     }
 };
 
-// --- AUDIO SYSTEM ---
+// --- BUBBLESHEART AUDIO SYSTEM ---
 let soundEnabled = true;
 let isBgmPlaying = false;
 
