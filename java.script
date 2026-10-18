@@ -1,4 +1,4 @@
-// Function for switching navigation tabs (Beranda, Desain, Produk)
+// Navigasi Tab (Beranda, Desain, Produk)
 function switchTab(tabName) {
     const contents = document.querySelectorAll('.tab-content');
     contents.forEach(el => el.classList.add('hidden'));
@@ -21,7 +21,7 @@ function switchTab(tabName) {
     }
 }
 
-// Function for opening member profile modal
+// Buka Modal Pop-up Profil Anggota
 function openMemberModal(name, role, desc, imgSrc, skills) {
     document.getElementById('modal-name').innerText = name;
     document.getElementById('modal-role').innerText = role;
@@ -47,7 +47,7 @@ function openMemberModal(name, role, desc, imgSrc, skills) {
     }, 10);
 }
 
-// Function for closing member profile modal
+// Tutup Modal Pop-up Profil Anggota
 function closeMemberModal() {
     const modal = document.getElementById('member-modal');
     const container = document.getElementById('modal-container');
@@ -60,7 +60,7 @@ function closeMemberModal() {
     }, 300);
 }
 
-// Function for Fullscreen PPT View
+// Kontrol Layar Penuh Presentasi PPT
 function toggleFullScreenPPT() {
     const iframe = document.getElementById('ppt-iframe');
     if (iframe.requestFullscreen) {
