@@ -496,3 +496,82 @@ body {
     height: 100%;
     border: none;
 }
+/* Container Kartu Presentasi Luas & Serasi Tema */
+.presentation-card-section {
+    padding: 35px 25px !important;
+    background: rgba(20, 15, 38, 0.85) !important; /* Latar belakang gelap futuristik */
+    border: 2px solid rgba(96, 165, 250, 0.4) !important;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.25) !important;
+}
+
+/* Header Judul PRESENTATION Sesuai Contoh Gambar */
+.presentation-header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.presentation-header-title .title-bar {
+    width: 6px;
+    height: 38px;
+    background: #60a5fa;
+    border-radius: 4px;
+    box-shadow: 0 0 12px #60a5fa;
+}
+
+.presentation-header-title h2 {
+    font-family: 'Fredoka', cursive;
+    font-size: 2.4rem;
+    letter-spacing: 3px;
+    color: #a78bfa; /* Ungu terang muda */
+    text-shadow: 0 0 15px rgba(167, 139, 250, 0.6);
+    margin: 0;
+}
+
+/* Bingkai Pemutar Presentasi Ekstra Luas & Garis Neon */
+.canva-presentation-frame-large {
+    width: 100%;
+    max-width: 100%; /* Memenuhi seluruh lebar kartu */
+    margin: 0 auto;
+    padding: 8px;
+    background: #090a16;
+    border-radius: 24px;
+    border: 3px solid #60a5fa; /* Garis tepi biru neon */
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.5), inset 0 0 15px rgba(96, 165, 250, 0.2);
+    overflow: hidden;
+}
+
+.canva-aspect-ratio-large {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* Rasio standar 16:9 yang tinggi & presisi */
+    border-radius: 18px;
+    overflow: hidden;
+    background: #000;
+}
+
+.canva-presentation-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsif Layar HP */
+@media (max-width: 768px) {
+    .presentation-header-title h2 {
+        font-size: 1.8rem;
+    }
+    .presentation-card-section {
+        padding: 20px 12px !important;
+    }
+    .canva-presentation-frame-large {
+        padding: 4px;
+        border-radius: 18px;
+    }
+}
