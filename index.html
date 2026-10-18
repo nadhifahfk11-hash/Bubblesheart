@@ -28,7 +28,7 @@
             <a href="#beranda" class="active">Beranda</a>
             <a href="#filosofi">Filosofi Logo</a>
             <a href="#kelompok">Anggota</a>
-            <a href="#produk">Produk</a>
+            <a href="#presentasi">Presentasi</a>
         </div>
         <button class="sound-btn" id="audioToggle" title="Matikan/Hidupkan Suara Pop">
             <i class="fas fa-volume-up"></i>
@@ -36,23 +36,39 @@
     </nav>
 
     <div class="container">
-        <!-- Hero Banner Section -->
+        <!-- Hero Banner Section (Mirip Contoh Visual Banner) -->
         <header class="hero-section" id="beranda">
+            <!-- Search Bar Floating Kanan Atas -->
+            <div class="search-bar-mock">
+                <input type="text" placeholder="Cari di Bubblesheart..." class="search-input">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- Elemen Kupu-Kupu Melayang di Sisi Kiri & Kanan -->
+            <div class="butterfly butterfly-left">🦋</div>
+            <div class="butterfly butterfly-right">🦋</div>
+
+            <!-- Title & Ribbon Center -->
             <div class="hero-center-content">
-                <div class="search-bar-mock">
-                    <i class="fas fa-search" style="color: #ff94b9;"></i>
-                    <span style="font-size: 0.85rem; color: #a0a0c0;">Cari sesuatu di Bubblesheart...</span>
+                <div class="stars-cluster">
+                    <span class="star-sparkle star-1">✦</span>
+                    <span class="star-sparkle star-2">✦</span>
+                    <span class="star-sparkle star-3">✦</span>
                 </div>
-                
+
                 <h1 class="bubble-title-3d">BUBBLES<br>HEART</h1>
-                
-                <div class="ribbon-3d">
-                    <span class="ribbon-knot">🎀</span>
+
+                <!-- Ribbon Bow Overlay -->
+                <div class="ribbon-3d-wrapper">
+                    <div class="ribbon-bow">🎀</div>
                 </div>
-                
+
                 <div class="subtitle-badge">
                     KELOMPOK 2 | KELAS X. D
                 </div>
+
+                <!-- Floating Cloud Bottom Right -->
+                <div class="floating-cloud">☁️✨</div>
             </div>
         </header>
 
@@ -62,8 +78,10 @@
             
             <div class="filosofi-content">
                 <div class="logo-box">
-                    <!-- Sumber gambar logo diubah ke file lokal: logo bubblesheart.jpg -->
-                    <img src="logo bubblesheart.png" alt="Logo Bubblesheart" class="logo-img" id="interactiveLogo" onerror="this.onerror=null; this.src='https://via.placeholder.com/180/ffb6c1/ffffff?text=Bubblesheart';">
+                    <!-- Logo Diperbesar dengan Frame Aesthetic -->
+                    <div class="logo-frame">
+                        <img src="logo bubblesheart.jpg" alt="Logo Bubblesheart" class="logo-img-large" id="interactiveLogo" onerror="this.onerror=null; this.src='https://via.placeholder.com/320/ffb6c1/ffffff?text=Bubblesheart+Logo';">
+                    </div>
                 </div>
                 
                 <div class="text-box">
@@ -71,10 +89,10 @@
                         Logo kami memiliki filosofi yaitu <strong>Logo Bubblesheart</strong> berbentuk hati dengan tampilan gelembung berwarna pastel yang berkilau. Bentuk hati melambangkan kebersamaan, kepedulian, dan rasa saling menghargai antaranggota kelompok.
                     </p>
                     <p>
-                        Gelembung menggambarkan lima anggota yang memiliki sifat, ide, dan kemampuan berbeda, tetapi tetap bisa bersatu dan bekerja sama. Warna pastel melambangkan kreativitas dan suasana kelompok yang positif, sedangkan kilauan pada logo menggambarkan kelebihan setiap anggota yang saling melengkapi.
+                        Gelembung menggambarkan lima anggota yang memiliki sifat, ide, dan kemampuan berbeda, tetapi tetap bisa bersatu dan bekerja sama. Warna pastel melambangkan kreativitas dan suasana kelompok yang positif, sedangkan kilauan pada logo menggambarkan kelebihan setiap anggota yang saling melengkapi .
                     </p>
                     <p style="margin-bottom: 0;">
-                        Secara keseluruhan, <strong>Bubblesheart</strong> melambangkan lima orang yang berbeda karakter, tetapi memiliki tujuan yang sama. Dengan kekompakan, rasa saling percaya, dan kerja sama, setiap anggota dapat saling mendukung untuk mencapai hasil yang lebih baik bersama-sama.
+                        Secara keseluruhan, <strong>Bubblesheart</strong> melambangkan lima orang yang berbeda karakter, tetapi memiliki tujuan yang sama[cite: 1]. Dengan kekompakan, rasa saling percaya, dan kerja sama, setiap anggota dapat saling mendukung untuk mencapai hasil yang lebih baik bersama-sama .
                     </p>
                 </div>
             </div>
@@ -133,34 +151,22 @@
             </div>
         </section>
 
-        <!-- Showcase Produk Section -->
-        <section class="card-section" id="produk">
-            <h2 class="section-title">Koleksi Produk & Kreativitas</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-badge">Hot Item</div>
-                    <div class="product-icon">💖</div>
-                    <div class="product-title">Bubble Keychain Aesthetic</div>
-                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Gantungan kunci gelembung hati glossy dengan aksen pita pastel manis.</p>
-                    <button class="btn-primary" onclick="triggerPopEffect(event)">Lihat Detail</button>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-badge">Special Edition</div>
-                    <div class="product-icon">✨</div>
-                    <div class="product-title">Sparkle Pastel Merch</div>
-                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Merchandise spesial berdesain karakter gelembung lembut & berkilau.</p>
-                    <button class="btn-primary" onclick="triggerPopEffect(event)">Lihat Detail</button>
-                </div>
+        <!-- Slide Presentasi Canva Section -->
+        <section class="card-section" id="presentasi">
+            <h2 class="section-title">Slide Presentasi Kelompok</h2>
+            <p class="section-subtitle">Jelajahi slide materi presentasi kami secara langsung di bawah ini:</p>
+            
+            <div class="canva-embed-container">
+                <iframe loading="lazy" class="canva-iframe" src="https://www.canva.com/design/DAGU-i3g1mo/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+            </div>
+            
+            <div class="canva-action-bar">
+                <a href="https://canva.link/i3g1mofyxt1uter" target="_blank" rel="noopener noreferrer" class="btn-canva">
+                    <i class="fas fa-external-link-alt"></i> Buka Fullscreen di Canva
+                </a>
             </div>
         </section>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© 2026 <strong>Bubblesheart</strong> — Kelompok 2 | Kelas X. D. Made with ✨ & 💖</p>
-    </footer>
-
     <!-- External JavaScript -->
     <script src="script.js"></script>
 </body>
