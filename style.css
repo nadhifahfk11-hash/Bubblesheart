@@ -79,7 +79,7 @@ body {
     color: #fff;
     font-weight: 600;
     font-size: 0.95rem;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
     transition: all 0.3s ease;
 }
@@ -391,6 +391,7 @@ body {
     border-color: #ff85a2;
 }
 
+/* Animasi Karakter Bergerak Melayang & Bergoyang */
 .member-img-wrapper {
     width: 95px;
     height: 95px;
@@ -399,6 +400,19 @@ body {
     padding: 4px;
     background: linear-gradient(135deg, #ff85a2, #fef08a, #3b82f6);
     box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    animation: floatAndWiggle 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatAndWiggle {
+    0% {
+        transform: translateY(0px) rotate(-3deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+    100% {
+        transform: translateY(-12px) rotate(-2deg);
+    }
 }
 
 .member-img {
@@ -666,20 +680,4 @@ body {
     .presentation-box-glow { border-radius: 20px; padding: 3px; }
     .canva-aspect-ratio-hd { border-radius: 16px; }
     .modal-card { padding: 25px 20px; }
-}
-/* Efek Animasi Karakter Bergerak Melayang & Bergoyang */
-.member-img-wrapper {
-    animation: floatAndWiggle 3s ease-in-out infinite alternate;
-}
-
-@keyframes floatAndWiggle {
-    0% {
-        transform: translateY(0px) rotate(-3deg);
-    }
-    50% {
-        transform: translateY(-8px) rotate(3deg);
-    }
-    100% {
-        transform: translateY(-12px) rotate(-2deg);
-    }
 }
