@@ -1,10 +1,9 @@
 :root {
-    --bg-gradient-top: #3b82f6;
-    --bg-gradient-bottom: #f472b6;
+    --sky-blue: #3a8dff;
+    --sky-light: #60a5fa;
     --bubble-pink: #ff85a2;
     --bubble-light-pink: #ffb6c1;
-    --bubble-shadow: rgba(255, 105, 180, 0.4);
-    --card-bg: rgba(255, 255, 255, 0.85);
+    --card-bg: rgba(255, 255, 255, 0.88);
     --text-color: #2d3748;
     --accent-yellow: #fef08a;
 }
@@ -19,7 +18,7 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(180deg, #2b6cb0 0%, #4299e1 45%, #f687b3 100%);
+    background: linear-gradient(180deg, #2b7fff 0%, #52a5ff 40%, #f472b6 90%, #f472b6 100%);
     background-attachment: fixed;
     color: var(--text-color);
     overflow-x: hidden;
@@ -72,7 +71,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
 .nav-links a {
@@ -86,7 +85,7 @@ body {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.35);
     color: #fff;
     transform: translateY(-2px);
 }
@@ -111,90 +110,181 @@ body {
     transform: scale(1.1);
 }
 
-/* Layout Container */
+/* Container */
 .container {
     max-width: 1050px;
     margin: 0 auto;
-    padding: 120px 20px 60px;
+    padding: 110px 20px 60px;
     position: relative;
     z-index: 10;
 }
 
-/* Hero Section */
+/* Hero Section Aesthetic Banner */
 .hero-section {
     text-align: center;
-    padding: 40px 20px 60px;
+    padding: 60px 20px 80px;
     position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search-bar-mock {
-    width: 220px;
-    height: 32px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 20px;
-    margin: 0 auto 30px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    padding: 4px 6px 4px 16px;
     display: flex;
     align-items: center;
-    padding: 0 12px;
     gap: 8px;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1.5px solid #fff;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.85rem;
+    width: 160px;
+    color: #333;
+}
+
+.search-btn {
+    background: #ffb326;
+    border: none;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Butterfly Animations */
+.butterfly {
     position: absolute;
-    top: 10px;
-    right: 20px;
+    font-size: 6.5rem;
+    filter: drop-shadow(0 10px 20px rgba(255, 105, 180, 0.4));
+    z-index: 5;
+    animation: fly 4s ease-in-out infinite alternate;
+}
+
+.butterfly-left {
+    left: -20px;
+    top: 15%;
+    transform: rotate(-15deg);
+}
+
+.butterfly-right {
+    right: -20px;
+    top: 20%;
+    transform: rotate(15deg) scaleX(-1);
+}
+
+@keyframes fly {
+    0% { transform: translateY(0px) rotate(-10deg); }
+    100% { transform: translateY(-25px) rotate(5deg); }
+}
+
+/* Hero Content */
+.hero-center-content {
+    position: relative;
+    display: inline-block;
+}
+
+.stars-cluster {
+    position: absolute;
+    top: -25px;
+    left: -40px;
+    font-size: 2.2rem;
+    color: #fff7a1;
+    text-shadow: 0 0 10px #fff;
+}
+
+.star-sparkle {
+    display: inline-block;
+    animation: pulseStar 1.8s infinite alternate;
+}
+.star-2 { animation-delay: 0.4s; font-size: 1.5rem; }
+.star-3 { animation-delay: 0.8s; font-size: 1.8rem; }
+
+@keyframes pulseStar {
+    0% { transform: scale(0.8); opacity: 0.7; }
+    100% { transform: scale(1.2); opacity: 1; }
 }
 
 .bubble-title-3d {
     font-family: 'Fredoka', cursive;
-    font-size: 5rem;
+    font-size: 5.5rem;
     line-height: 0.95;
     font-weight: 700;
-    color: #ff9ebb;
+    color: #ffa1c4;
     text-shadow: 
         0 0 0 #ff6584,
-        3px 3px 0 #ff5277,
-        6px 6px 0 #e63963,
-        9px 9px 15px rgba(0,0,0,0.3),
-        inset -3px -3px 6px rgba(0, 0, 0, 0.2),
-        inset 3px 3px 6px rgba(255, 255, 255, 0.8);
+        4px 4px 0 #ff4b72,
+        8px 8px 0 #e63963,
+        12px 12px 20px rgba(0,0,0,0.35),
+        inset -4px -4px 8px rgba(0, 0, 0, 0.25),
+        inset 4px 4px 8px rgba(255, 255, 255, 0.9);
     letter-spacing: 2px;
-    margin-bottom: 20px;
-    animation: float 4s ease-in-out infinite;
     position: relative;
     display: inline-block;
-    -webkit-text-stroke: 3px #fff;
+    -webkit-text-stroke: 4px #fff;
+    animation: floatTitle 4s ease-in-out infinite;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-12px) rotate(1deg); }
+@keyframes floatTitle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
 }
 
-.ribbon-3d {
+.ribbon-3d-wrapper {
     position: absolute;
-    top: 50%;
+    top: 38%;
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    z-index: 8;
 }
 
-.ribbon-knot {
-    font-size: 4rem;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+.ribbon-bow {
+    font-size: 5.5rem;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
 }
 
 .subtitle-badge {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.9);
-    color: #2b6cb0;
+    background: rgba(255, 255, 255, 0.92);
+    color: #2563eb;
     font-family: 'Fredoka', cursive;
-    padding: 10px 24px;
+    padding: 10px 28px;
     border-radius: 30px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: 1.5px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    border: 2px solid #fff;
-    margin-top: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border: 3px solid #fff;
+    margin-top: 15px;
+}
+
+.floating-cloud {
+    position: absolute;
+    bottom: -40px;
+    right: -50px;
+    font-size: 3.5rem;
+    filter: drop-shadow(0 8px 15px rgba(255,255,255,0.6));
+    animation: floatCloud 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatCloud {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
 }
 
 /* Card Sections */
@@ -207,39 +297,26 @@ body {
     margin-bottom: 40px;
     border: 2px solid rgba(255, 255, 255, 0.8);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
 }
 
 .section-title {
     font-family: 'Fredoka', cursive;
-    font-size: 2rem;
-    color: #2b6cb0;
+    font-size: 2.2rem;
+    color: #2563eb;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, #ff85a2, #fef08a);
-    border-radius: 2px;
-    position: absolute;
-    bottom: -10px;
+.section-subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 25px;
+    font-size: 1rem;
 }
 
-/* Filosofi Logo Content */
+/* Logo Diperbesar & Frame Aesthetic */
 .filosofi-content {
     display: flex;
     align-items: center;
@@ -248,27 +325,37 @@ body {
 }
 
 .logo-box {
-    flex: 1;
-    min-width: 200px;
+    flex: 1.2;
+    min-width: 280px;
     display: flex;
     justify-content: center;
 }
 
-.logo-img {
-    width: 180px;
-    height: auto;
-    filter: drop-shadow(0 10px 15px rgba(255, 133, 162, 0.4));
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
+.logo-frame {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 182, 193, 0.5));
+    padding: 15px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(255, 133, 162, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.8);
+    border: 3px solid #fff;
+    transition: transform 0.4s ease;
 }
 
-.logo-img:hover {
-    transform: scale(1.15) rotate(5deg);
+.logo-frame:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.logo-img-large {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    object-fit: cover;
 }
 
 .text-box {
-    flex: 2;
-    min-width: 280px;
+    flex: 1.8;
+    min-width: 300px;
 }
 
 .text-box p {
@@ -279,7 +366,7 @@ body {
     text-align: justify;
 }
 
-/* Jobdesk Members Grid */
+/* Members Grid */
 .members-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -288,7 +375,7 @@ body {
 }
 
 .member-card {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.75);
     border-radius: 24px;
     padding: 20px 15px;
     text-align: center;
@@ -300,16 +387,16 @@ body {
 .member-card:hover {
     transform: translateY(-8px) scale(1.03);
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 15px 30px rgba(255, 133, 162, 0.2);
+    box-shadow: 0 15px 30px rgba(255, 133, 162, 0.25);
 }
 
 .member-img-wrapper {
-    width: 90px;
-    height: 90px;
+    width: 95px;
+    height: 95px;
     margin: 0 auto 12px;
     border-radius: 50%;
     padding: 4px;
-    background: linear-gradient(135deg, #ff85a2, #bbee33, #4299e1);
+    background: linear-gradient(135deg, #ff85a2, #fef08a, #3b82f6);
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
@@ -340,69 +427,49 @@ body {
     border: 1px solid #fbb6ce;
 }
 
-/* Products Showcase */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-.product-card {
-    background: #fff;
-    border-radius: 24px;
-    padding: 25px;
+/* Canva Embed Container */
+.canva-embed-container {
     position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    border: 2px solid #f0f0f0;
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.product-card:hover {
-    border-color: #ff85a2;
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(255, 133, 162, 0.15);
-}
-
-.product-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #fef08a;
-    color: #744210;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 10px;
-}
-
-.product-icon {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
-}
-
-.product-title {
-    font-family: 'Fredoka', cursive;
-    font-size: 1.25rem;
-    color: #2b6cb0;
-    margin-bottom: 8px;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #ff85a2 0%, #ff6584 100%);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* Aspect Ratio 16:9 */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(255, 101, 132, 0.3);
+    overflow: hidden;
+    border: 3px solid #fff;
+}
+
+.canva-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.canva-action-bar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-canva {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #00c4cc 0%, #7d2ae8 100%);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(125, 42, 232, 0.3);
     transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(255, 101, 132, 0.5);
+.btn-canva:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(125, 42, 232, 0.45);
 }
 
 /* Footer */
@@ -430,35 +497,19 @@ body {
         transform: translate(-50%, -50%) scale(0.2);
         opacity: 1;
     }
-    50% {
-        opacity: 0.8;
-    }
     100% {
         transform: translate(-50%, -100px) scale(1.5);
         opacity: 0;
     }
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 10px 20px;
-    }
-    .nav-links {
-        display: none; /* Can be expanded with a toggle menu if needed */
-    }
-    .bubble-title-3d {
-        font-size: 3.2rem;
-    }
-    .search-bar-mock {
-        position: static;
-        margin: 0 auto 20px;
-    }
-    .filosofi-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .card-section {
-        padding: 25px 20px;
-    }
+    .bubble-title-3d { font-size: 3.5rem; }
+    .butterfly { font-size: 4rem; }
+    .butterfly-left { left: 0; }
+    .butterfly-right { right: 0; }
+    .search-bar-mock { position: static; margin: 0 auto 15px; }
+    .filosofi-content { flex-direction: column; }
+    .nav-links { display: none; }
 }
