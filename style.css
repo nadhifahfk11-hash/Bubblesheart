@@ -218,43 +218,66 @@ body {
     100% { transform: scale(1.2); opacity: 1; }
 }
 
+/* Judul Balon Gelembung 3D */
 .bubble-title-3d {
-    font-family: 'Fredoka', cursive;
-    font-size: 5.5rem;
+    font-family: 'Sniglet', 'Fredoka', cursive;
+    font-size: 5.6rem;
     line-height: 0.95;
-    font-weight: 700;
-    color: #ffa1c4;
-    text-shadow: 
-        0 0 0 #ff6584,
-        4px 4px 0 #ff4b72,
-        8px 8px 0 #e63963,
-        12px 12px 20px rgba(0,0,0,0.35),
-        inset -4px -4px 8px rgba(0, 0, 0, 0.25),
-        inset 4px 4px 8px rgba(255, 255, 255, 0.9);
-    letter-spacing: 2px;
+    font-weight: 800;
+    color: #ffa3c8;
+    text-transform: uppercase;
+    letter-spacing: 4px;
     position: relative;
     display: inline-block;
-    -webkit-text-stroke: 4px #fff;
-    animation: floatTitle 4s ease-in-out infinite;
+    
+    text-shadow: 
+        0 3px 0 #ff7db3,
+        0 6px 0 #f75598,
+        0 9px 0 #e6367f,
+        0 12px 0 #c22164,
+        0 15px 20px rgba(194, 33, 100, 0.4),
+        0 22px 35px rgba(0, 0, 0, 0.25),
+        inset -3px -3px 8px rgba(150, 10, 60, 0.35),
+        inset 4px 4px 8px rgba(255, 255, 255, 0.95);
+        
+    -webkit-text-stroke: 3.5px #ffffff;
+    filter: drop-shadow(0 10px 15px rgba(247, 85, 152, 0.45));
+    animation: floatTitle 3.5s ease-in-out infinite alternate;
+}
+
+.title-line-top {
+    display: block;
+    transform: perspective(400px) rotateX(14deg) scale(1.03);
+    margin-bottom: 2px;
+}
+
+.title-line-bottom {
+    display: block;
+    transform: perspective(400px) rotateX(-10deg) scale(0.95);
 }
 
 @keyframes floatTitle {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
+    0% {
+        transform: translateY(0px) rotate(-1.5deg);
+    }
+    100% {
+        transform: translateY(-12px) rotate(1.5deg);
+    }
 }
 
+/* POSISI PITA MERAH DIBUAT PAS DI POJOK KANAN ATAS JUDUL (TIDAK MENUTUPI HURUF) */
 .ribbon-3d-wrapper {
     position: absolute;
-    top: 38%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: -15px;
+    right: -35px;
     pointer-events: none;
-    z-index: 8;
+    z-index: 12;
 }
 
 .ribbon-bow {
-    font-size: 5.5rem;
+    font-size: 3.2rem; /* Ukuran disesuaikan agar proporsional */
     filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+    transform: rotate(15deg);
 }
 
 .subtitle-badge {
@@ -269,7 +292,7 @@ body {
     letter-spacing: 1.5px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     border: 3px solid #fff;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .floating-cloud {
@@ -404,15 +427,9 @@ body {
 }
 
 @keyframes floatAndWiggle {
-    0% {
-        transform: translateY(0px) rotate(-3deg);
-    }
-    50% {
-        transform: translateY(-8px) rotate(3deg);
-    }
-    100% {
-        transform: translateY(-12px) rotate(-2deg);
-    }
+    0% { transform: translateY(0px) rotate(-3deg); }
+    50% { transform: translateY(-8px) rotate(3deg); }
+    100% { transform: translateY(-12px) rotate(-2deg); }
 }
 
 .member-img {
@@ -458,226 +475,4 @@ body {
 /* Modal Pop-Up Informasi Detail Jobdesk */
 .modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(15, 23, 42, 0.65);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.35s ease;
-    padding: 20px;
-}
-
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal-card {
-    background: linear-gradient(135deg, #ffffff 0%, #fff0f5 100%);
-    border-radius: 32px;
-    padding: 35px 30px;
-    max-width: 480px;
-    width: 100%;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(255, 133, 162, 0.4);
-    border: 3px solid #fff;
-    transform: scale(0.8) translateY(20px);
-    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.modal-overlay.active .modal-card {
-    transform: scale(1) translateY(0);
-}
-
-.modal-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    font-size: 1.8rem;
-    color: #718096;
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: all 0.2s ease;
-}
-
-.modal-close-btn:hover {
-    background: #ff85a2;
-    color: #fff;
-    transform: rotate(90deg);
-}
-
-.modal-img-wrapper {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 15px;
-    border-radius: 50%;
-    padding: 5px;
-    background: linear-gradient(135deg, #ff85a2, #fef08a, #3b82f6);
-    box-shadow: 0 10px 20px rgba(255, 133, 162, 0.3);
-}
-
-.modal-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #fff;
-}
-
-.modal-name {
-    font-family: 'Fredoka', cursive;
-    font-size: 1.6rem;
-    color: #2d3748;
-    margin-bottom: 6px;
-}
-
-.modal-role {
-    display: inline-block;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #d53f8c;
-    background: #ffe4e6;
-    padding: 6px 16px;
-    border-radius: 20px;
-    border: 1px solid #fecdd3;
-    margin-bottom: 15px;
-}
-
-.modal-divider {
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, #ff85a2, #60a5fa);
-    border-radius: 2px;
-    margin: 0 auto 18px;
-}
-
-.modal-desc {
-    font-size: 1.02rem;
-    line-height: 1.7;
-    color: #4a5568;
-    text-align: justify;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 18px 20px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
-}
-
-/* Section Presentation Mandiri Presisi */
-.presentation-direct-section {
-    width: 100%;
-    max-width: 900px;
-    margin: 60px auto 40px;
-    padding: 0 10px;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.presentation-header-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 25px;
-    padding-left: 5px;
-}
-
-.presentation-header-title .title-bar {
-    width: 6px;
-    height: 36px;
-    background: #60a5fa;
-    border-radius: 4px;
-    box-shadow: 0 0 12px #60a5fa;
-}
-
-.presentation-header-title h2 {
-    font-family: 'Fredoka', cursive;
-    font-size: 2.3rem;
-    letter-spacing: 3px;
-    color: #b19ffb;
-    text-shadow: 0 0 15px rgba(177, 159, 251, 0.6);
-    margin: 0;
-    font-weight: 700;
-}
-
-.presentation-box-glow {
-    width: 100%;
-    background: #090a16;
-    border-radius: 28px;
-    border: 3px solid #5294e2;
-    box-shadow: 0 0 25px rgba(82, 148, 226, 0.6), inset 0 0 15px rgba(82, 148, 226, 0.3);
-    padding: 6px;
-    overflow: hidden;
-}
-
-.canva-aspect-ratio-hd {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 56.25%;
-    border-radius: 22px;
-    overflow: hidden;
-    background: #000;
-}
-
-.canva-presentation-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* Pop Effect Particles */
-.pop-particle {
-    position: fixed;
-    pointer-events: none;
-    border-radius: 50%;
-    animation: popAndFade 0.8s ease-out forwards;
-    z-index: 9999;
-}
-
-@keyframes popAndFade {
-    0% {
-        transform: translate(-50%, -50%) scale(0.2);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -100px) scale(1.5);
-        opacity: 0;
-    }
-}
-
-/* Responsif Mobile */
-@media (max-width: 768px) {
-    .bubble-title-3d { font-size: 3.5rem; }
-    .butterfly { font-size: 4rem; }
-    .butterfly-left { left: 0; }
-    .butterfly-right { right: 0; }
-    .search-bar-mock { position: static; margin: 0 auto 15px; }
-    .filosofi-content { flex-direction: column; }
-    .nav-links { display: none; }
-    .presentation-direct-section { margin: 40px auto 20px; }
-    .presentation-header-title h2 { font-size: 1.8rem; }
-    .presentation-box-glow { border-radius: 20px; padding: 3px; }
-    .canva-aspect-ratio-hd { border-radius: 16px; }
-    .modal-card { padding: 25px 20px; }
-}
+    top:
