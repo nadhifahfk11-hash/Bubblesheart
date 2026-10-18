@@ -1,21 +1,167 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
-    <h1>Bubblesheart</h1>
-    <Ul>
-      <li>beranda</li>
-        <li><a href ="desain.html">Desain </a></li>
-      <li><a href="produk.html">produk</a></li>
-      </Ul>
-        <p>...</p>
-    <img src="logo bubblesheart.png">
-    <h2> Filosofi Logo Bubblesheart </h2>
-    <p> logo kami memiliki filosofi yaitu Logo Bublehearts berbentuk hati dengan tampilan gelembung berwarna pastel yang berkilau. Bentuk hati melambangkan kebersamaan, kepedulian, dan rasa saling menghargai antaranggota kelompok.
-Gelembung menggambarkan lima anggota yang memiliki sifat, ide, dan kemampuan berbeda, tetapi tetap bisa bersatu dan bekerja sama. Warna pastel melambangkan kreativitas dan suasana kelompok yang positif, sedangkan kilauan pada logo menggambarkan kelebihan setiap anggota yang saling melengkapi.
-Secara keseluruhan, Bublehearts melambangkan lima orang yang berbeda karakter, tetapi memiliki tujuan yang sama. Dengan kekompakan, rasa saling percaya, dan kerja sama, setiap anggota dapat saling mendukung untuk mencapai hasil yang lebih baik bersama-sama.</p>
-  </body>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubblesheart - Modern, Aesthetic & Interactive</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Canvas Background Animation -->
+    <canvas id="bubbleCanvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#" class="logo-brand">
+            <span class="logo-icon">💖</span>
+            <span>bubblesheart</span>
+        </a>
+        <div class="nav-links">
+            <a href="#beranda" class="active">Beranda</a>
+            <a href="#filosofi">Filosofi Logo</a>
+            <a href="#kelompok">Anggota</a>
+            <a href="#produk">Produk</a>
+        </div>
+        <button class="sound-btn" id="audioToggle" title="Matikan/Hidupkan Suara Pop">
+            <i class="fas fa-volume-up"></i>
+        </button>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Banner Section -->
+        <header class="hero-section" id="beranda">
+            <div class="hero-center-content">
+                <div class="search-bar-mock">
+                    <i class="fas fa-search" style="color: #ff94b9;"></i>
+                    <span style="font-size: 0.85rem; color: #a0a0c0;">Cari sesuatu di Bubblesheart...</span>
+                </div>
+                
+                <h1 class="bubble-title-3d">BUBBLES<br>HEART</h1>
+                
+                <div class="ribbon-3d">
+                    <span class="ribbon-knot">🎀</span>
+                </div>
+                
+                <div class="subtitle-badge">
+                    KELOMPOK 2 | KELAS X. D
+                </div>
+            </div>
+        </header>
+
+        <!-- Filosofi Logo Section -->
+        <section class="card-section" id="filosofi">
+            <h2 class="section-title">Filosofi Logo Bubblesheart</h2>
+            
+            <div class="filosofi-content">
+                <div class="logo-box">
+                    <!-- Sumber gambar logo diubah ke file lokal: logo bubblesheart.jpg -->
+                    <img src="logo bubblesheart.jpg" alt="Logo Bubblesheart" class="logo-img" id="interactiveLogo" onerror="this.onerror=null; this.src='https://via.placeholder.com/180/ffb6c1/ffffff?text=Bubblesheart';">
+                </div>
+                
+                <div class="text-box">
+                    <p>
+                        Logo kami memiliki filosofi yaitu <strong>Logo Bubblesheart</strong> berbentuk hati dengan tampilan gelembung berwarna pastel yang berkilau[cite: 1]. Bentuk hati melambangkan kebersamaan, kepedulian, dan rasa saling menghargai antaranggota kelompok[cite: 1].
+                    </p>
+                    <p>
+                        Gelembung menggambarkan lima anggota yang memiliki sifat, ide, dan kemampuan berbeda, tetapi tetap bisa bersatu dan bekerja sama[cite: 1]. Warna pastel melambangkan kreativitas dan suasana kelompok yang positif, sedangkan kilauan pada logo menggambarkan kelebihan setiap anggota yang saling melengkapi[cite: 1].
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        Secara keseluruhan, <strong>Bubblesheart</strong> melambangkan lima orang yang berbeda karakter, tetapi memiliki tujuan yang sama[cite: 1]. Dengan kekompakan, rasa saling percaya, dan kerja sama, setiap anggota dapat saling mendukung untuk mencapai hasil yang lebih baik bersama-sama[cite: 1].
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jobdesk Anggota Kelompok Section -->
+        <section class="card-section" id="kelompok">
+            <h2 class="section-title">Jobdesk Anggota Kelompok</h2>
+            <div class="members-grid">
+                
+                <!-- Aura Dwi -->
+                <div class="member-card">
+                    <div class="member-img-wrapper">
+                        <img src="about me.jpeg" alt="Aura Dwi" class="member-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/120/ffb6c1/ffffff?text=Aura';">
+                    </div>
+                    <div class="member-name">Aura Dwi</div>
+                    <div class="member-role"><i class="fas fa-code"></i> Web Developer</div>
+                </div>
+
+                <!-- Nadhifah Faiha -->
+                <div class="member-card">
+                    <div class="member-img-wrapper">
+                        <img src="Nadhifah.jpeg" alt="Nadhifah Faiha" class="member-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/120/ffb6c1/ffffff?text=Nadhifah';">
+                    </div>
+                    <div class="member-name">Nadhifah Faiha</div>
+                    <div class="member-role"><i class="fas fa-mobile-alt"></i> App Programmer</div>
+                </div>
+
+                <!-- Farah Nabila -->
+                <div class="member-card">
+                    <div class="member-img-wrapper">
+                        <img src="Nabila .jpeg" alt="Farah Nabila" class="member-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/120/ffb6c1/ffffff?text=Nabila';">
+                    </div>
+                    <div class="member-name">Farah Nabila</div>
+                    <div class="member-role"><i class="fas fa-pen-nib"></i> Content Writer</div>
+                </div>
+
+                <!-- Kannisa Desfitra -->
+                <div class="member-card">
+                    <div class="member-img-wrapper">
+                        <img src="Kannisa .jpeg" alt="Kannisa Desfitra" class="member-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/120/ffb6c1/ffffff?text=Kannisa';">
+                    </div>
+                    <div class="member-name">Kannisa Desfitra</div>
+                    <div class="member-role"><i class="fas fa-palette"></i> Graphic Designer</div>
+                </div>
+
+                <!-- Khalilla Andien -->
+                <div class="member-card">
+                    <div class="member-img-wrapper">
+                        <img src="Khalilla.jpeg" alt="Khalilla Andien" class="member-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/120/ffb6c1/ffffff?text=Khalilla';">
+                    </div>
+                    <div class="member-name">Khalilla Andien</div>
+                    <div class="member-role"><i class="fas fa-paint-brush"></i> Graphic Designer</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Showcase Produk Section -->
+        <section class="card-section" id="produk">
+            <h2 class="section-title">Koleksi Produk & Kreativitas</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-badge">Hot Item</div>
+                    <div class="product-icon">💖</div>
+                    <div class="product-title">Bubble Keychain Aesthetic</div>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Gantungan kunci gelembung hati glossy dengan aksen pita pastel manis.</p>
+                    <button class="btn-primary" onclick="triggerPopEffect(event)">Lihat Detail</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">Special Edition</div>
+                    <div class="product-icon">✨</div>
+                    <div class="product-title">Sparkle Pastel Merch</div>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Merchandise spesial berdesain karakter gelembung lembut & berkilau.</p>
+                    <button class="btn-primary" onclick="triggerPopEffect(event)">Lihat Detail</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 <strong>Bubblesheart</strong> — Kelompok 2 | Kelas X. D. Made with ✨ & 💖</p>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
 </html>
-      
