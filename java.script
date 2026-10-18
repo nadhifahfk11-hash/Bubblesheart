@@ -10,7 +10,6 @@ if (audioBtn) {
     });
 }
 
-// Play Pop Sound using Web Audio API
 function playPopSound() {
     if (!soundEnabled) return;
     try {
@@ -30,9 +29,7 @@ function playPopSound() {
 
         osc.start();
         osc.stop(audioCtx.currentTime + 0.08);
-    } catch (e) {
-        // Audio fallback
-    }
+    } catch (e) {}
 }
 
 // Background Canvas Interactive Bubbles
@@ -47,7 +44,6 @@ function resize() {
 window.addEventListener('resize', resize);
 resize();
 
-// Mouse Interaction
 let mouse = { x: null, y: null };
 window.addEventListener('mousemove', (e) => {
     mouse.x = e.x;
@@ -111,7 +107,6 @@ class Bubble {
             ctx.arc(0, 0, this.size, 0, Math.PI * 2);
             ctx.fill();
 
-            // Highlight
             ctx.beginPath();
             ctx.arc(-this.size * 0.3, -this.size * 0.3, this.size * 0.25, 0, Math.PI * 2);
             ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
@@ -134,7 +129,6 @@ function animate() {
 }
 animate();
 
-// Pop Particle Creation
 function createParticle(x, y) {
     const p = document.createElement('div');
     p.className = 'pop-particle';
@@ -161,7 +155,6 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// Logo Click Animation
 const logo = document.getElementById('interactiveLogo');
 if (logo) {
     logo.addEventListener('click', (e) => {
